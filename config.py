@@ -28,7 +28,7 @@ MODEL_DETAILS = {
     },
     "llama3-groq-70b-8192-tool-use-preview": {
         "displayName": "Llama 3 70B Tool Use (Preview)",
-        "description": "Meta'nın araç entegraasyonu yeteneğine sahip gelişmiş dil modelidir.",
+        "description": "Meta'nın araç entegrasyonu yeteneğine sahip gelişmiş dil modelidir.",
         "size": "70 milyar parametreyle eğitilmiştir.",
         "bestFor": [
             "Karmaşık düzeyde muhakeme",
