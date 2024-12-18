@@ -53,10 +53,10 @@ MODEL_DETAILS = {
         ],
     },
     "mixtral-8x7b-32768": {
-        "display_name": "Mixtral 8x7B",
+        "displayName": "Mixtral 8x7B",
         "description": "Mistral'in yüksek performanslı MoE (mixture-of-experts) modelidir. MoE, bir yapay zekanın alt yapay zekalara bölünerek oluşturulması, verilen görevleri ilgili alt yapay zekaların bir araya gelerek yapmasını ifade eder.",
         "size": "8x7 milyar parametreyle eğitilmiştir.",
-        "best_for": [
+        "bestFor": [
             "Birden fazla dilde görevler",
             "Muhakeme yeteneği",
             "Kod yazımı",
