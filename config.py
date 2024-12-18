@@ -38,7 +38,7 @@ MODEL_DETAILS = {
     },
     "llama3-groq-8b-8192-tool-use-preview": {
         "displayName": "Llama 3 8B Tool Use (Preview)",
-        "description": "Llama 3 modelinin daha hafif versiyonudur. Daha az parametreyle eğitilmiştir.",
+        "description": "Meta Llama 3 modelinin daha hafif versiyonudur. Daha az parametreyle eğitilmiştir.",
         "size": "8 milyar parametreyle eğitilmiştir.",
         "bestFor": ["Daha hızlı cevaplar", "Hafif işler", "Araç kullanımı"],
     },
