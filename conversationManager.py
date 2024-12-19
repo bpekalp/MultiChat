@@ -66,17 +66,17 @@ class ConversationManager:
 
         return conversations
 
-    @staticmethod
-    def deleteConversation(conversationId: str):
-        """Belirli sohbeti siler."""
-        conversationFile = CONVERSATION_STORAGE_PATH / f"{conversationId}.json"
+    # @staticmethod
+    # def deleteConversation(conversationId: str):
+    #     """Belirli sohbeti siler."""
+    #     conversationFile = CONVERSATION_STORAGE_PATH / f"{conversationId}.json"
 
-        if conversationFile.exists():
-            try:
-                conversationFile.unlink()
+    #     if conversationFile.exists():
+    #         try:
+    #             conversationFile.unlink()
 
-            except Exception as e:
-                print(f"{conversationFile} silinemedi. Hata kodu: {e}")
+    #         except Exception as e:
+    #             print(f"{conversationFile} silinemedi. Hata kodu: {e}")
 
     @staticmethod
     def clearAllConversations():
