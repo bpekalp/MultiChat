@@ -49,8 +49,16 @@ def main():
         "chatInterface" not in st.session_state
         or st.session_state.currentModel != selectedModel
     ):
-        st.session_state.chatInterface = GroqChatInterface(model=selectedModel)
-        st.session_state.currentModel = selectedModel
+        try:
+            st.session_state.chatInterface = GroqChatInterface(model=selectedModel)
+            st.session_state.currentModel = selectedModel
+
+        except ValueError:
+            st.warning(
+                """Sohbete başlamak için lütfen Groq Cloud üzerinde bir hesap oluşturun, bu tamamen ücretsizdir. Ardından proje dizininde '.env' isimli bir dosya oluşturup içerisini şu formatta doldurun:
+
+                GROQ_API_KEY=api_keyiniz"""
+            )
 
     # Sohbet geçmişinin gösterilmesi
     with st.sidebar:

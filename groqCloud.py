@@ -15,9 +15,7 @@ class GroqChatInterface:
             apiKey = os.getenv("GROQ_API_KEY")
 
         if not apiKey:
-            raise ValueError(
-                "Lütfen Groq Cloud üzerinde bir hesap oluşturun, Bu tamamen ücretsizdir. Ardından proje dizininde '.env' isimli bir dosya oluşturup içerisini şu formatta doldurun: 'GROQ_API_KEY=api_keyiniz' (Tırnaklar olmadan.)"
-            )
+            raise ValueError("apiKey yok.")
 
         try:
             self.client = Groq(api_key=apiKey)
