@@ -10,12 +10,6 @@ CONVERSATION_STORAGE_PATH.mkdir(exist_ok=True)
 
 # Sohbet edilebilen modellerin tanımlanması
 MODEL_DETAILS = {
-    "gemma-7b-it": {
-        "displayName": "Gemma 7B Instruct",
-        "description": "Google'ın açık kaynaklı dil modelidir. Yönerge takibi ile görevleri yerine getirmesi için tasarlanmıştır.",
-        "size": "7 milyar parametreyle eğitilmiştir.",
-        "bestFor": ["Sohbet etme", "Yönerge takip etme", "Genel kullanım"],
-    },
     "gemma2-9b-it": {
         "displayName": "Gemma 2 9B Instruct",
         "description": "Google Gemma modelinin daha gelişmiş versiyonudur.",
