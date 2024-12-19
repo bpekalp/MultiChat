@@ -5,6 +5,7 @@ from groqCloud import GroqChatInterface
 
 
 def main():
+    # Sayfa görünümünün ve başlıkların ayarlanması
     st.set_page_config(page_title="MultiChat AI", page_icon="🤖", layout="wide")
 
     st.title("🤖 MultiChat AI: Birden fazla modelle aynı anda sohbet edin!")
@@ -49,6 +50,8 @@ def main():
         "chatInterface" not in st.session_state
         or st.session_state.currentModel != selectedModel
     ):
+        # Groq sınıfından nesne oluşturulması
+        # Eğer bağlantı kurulamazsa API bağlantısı için yönergeler verilir
         try:
             st.session_state.chatInterface = GroqChatInterface(model=selectedModel)
             st.session_state.currentModel = selectedModel
@@ -67,8 +70,10 @@ def main():
         conversations = ConversationManager.listConversations()
 
         for conv in conversations:
+            # Geçmiş sohbetleri listeleyen butonların oluşturulması
             convDisplay = f"{conv['id'][:8]} | {MODEL_DETAILS[conv['model']]['displayName']} | {conv['messageCount']} mesaj"
 
+            # Seçilen sohbetin yüklenmesi
             if st.button(convDisplay, key=conv["id"]):
                 loadedConv = ConversationManager.loadConversation(conv["id"])
                 if loadedConv:
@@ -83,6 +88,7 @@ def main():
         colNew, colClear = st.columns(2)
 
         with colNew:
+            # Yeni sohbetin yüklenmesi
             if st.button("Yeni Sohbet"):
                 st.session_state.conversationId = (
                     ConversationManager.generateConversationId()
@@ -91,6 +97,7 @@ def main():
                 st.rerun()
 
         with colClear:
+            # Geçmişin temizlenmesi
             if st.button("Geçmişi Temizle"):
                 ConversationManager.clearAllConversations()
                 st.success("Sohbet geçmişi başarıyla temizlendi.")

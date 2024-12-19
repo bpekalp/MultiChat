@@ -2,6 +2,7 @@ import os
 from pathlib import Path
 
 # Groq Cloud için API keyin yüklenmesi
+# Eğer mevcut değilse boş string atanır
 GROQ_API_KEY = os.getenv("GROQ_API_KEY", "")
 
 # Sohbet geçmişi için dosya yolunun belirtilmesi

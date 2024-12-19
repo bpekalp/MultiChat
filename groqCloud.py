@@ -24,11 +24,12 @@ class GroqChatInterface:
             print(f"Groq istemcisi başlatılırken hata oluştu. Hata kodu: {e}")
             raise
 
+        # Eğer istenen model geçerliyse modeli seç
+        # Değilse varsayılan modeli seç
         self.model = model if model in AVALIABLE_MODELS else DEFAULT_MODEL
 
     def generateResponse(self, messages: List[Dict]) -> str:
         """Groq Cloud bağlantısıyla bir cevap üretir."""
-
         try:
             chatCompletion = self.client.chat.completions.create(
                 messages=messages, model=self.model
@@ -41,7 +42,6 @@ class GroqChatInterface:
 
     def switchModel(self, model: str):
         """Mevcut modeli değiştirir."""
-
         if model in AVALIABLE_MODELS:
             self.model = model
 
